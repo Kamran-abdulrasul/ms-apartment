@@ -1,0 +1,24 @@
+databaseChangeLog:
+  - changeSet:
+      id: Create apartments_service table
+      author: Kamran
+      changes:
+        - createTable:
+            tableName: apartment_service
+            columns:
+              - column:
+                  name: apartment_id
+                  type: bigint
+                  constraints:
+                    foreignKeyName: fk_apartment_service_to_apartment
+                    references: apartments(id)
+                    nullable: false
+              - column:
+                  name: service_id
+                  type: bigint
+                  constraints:
+                    foreignKeyName: fk_apartment_service_to_service
+                    references: services(id)
+                    nullable: false
+
+            remarks: Table to store information about relation between apartment and service

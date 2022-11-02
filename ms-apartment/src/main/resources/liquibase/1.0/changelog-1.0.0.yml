@@ -1,0 +1,22 @@
+databaseChangeLog:
+  - changeSet:
+      id: Create apartments table
+      author: Kamran
+      changes:
+        - createTable:
+            tableName: apartments
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: headline
+                  type: varchar
+                  constraints:
+                    nullable: false
+
+            remarks: Table to store information about posts

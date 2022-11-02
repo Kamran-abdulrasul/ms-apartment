@@ -1,0 +1,23 @@
+databaseChangeLog:
+  - changeSet:
+      id: Create services table
+      author: Kamran
+      changes:
+        - createTable:
+            tableName: services
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: text
+                  constraints:
+                    nullable: false
+
+
+            remarks: Table to store information about services
